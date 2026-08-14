@@ -1,4 +1,4 @@
-import React from 'react'
+import './taskCard.css'
 
 const taskCard = () => {
   return (
@@ -7,5 +7,4 @@ const taskCard = () => {
     </div>
   )
 }
-
 export default taskCard
