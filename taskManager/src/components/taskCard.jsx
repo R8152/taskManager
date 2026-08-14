@@ -1,10 +1,13 @@
 import './taskCard.css'
+import { useEffect } from 'react'
+import TaskForm from './TaskForm'
 
-const taskCard = () => {
+const TaskCard = () => {
+  
   return (
-    <div>
-      
-    </div>
+    <>
+    
+    </>
   )
 }
-export default taskCard
+export default TaskCard

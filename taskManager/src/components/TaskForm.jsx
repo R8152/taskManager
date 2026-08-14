@@ -1,11 +1,17 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 
-const taskForm = () => {
+const TaskForm = () => {
   return (
-    <div>
-      
-    </div>
+    <>
+      const [formInfo, setFormInfo] = useState({
+        identificador:"",
+        titulo:"",
+        descricao:"",
+        prioridade:"",
+        status:""
+        })
+    </>
   )
 }
 
-export default taskForm
+export default TaskForm
