@@ -8,9 +8,11 @@ const TaskForm = () => {
   
   return (
     <>
-      
+      <input type="name" value={titulo} onChange={e => setTitulo(e.target.value)}/>
+      <input type="text" value={desc} onChange={e => setDesc(e.target.value)}/>
+      <input type="text" value={prioridade} onChange={e => setPrioridade(e.target.value)}/>
+      <input type="text" value={status} onChange={e => setStatus(e.target.value)}/>
     </>
   )
 }
-
 export default TaskForm
