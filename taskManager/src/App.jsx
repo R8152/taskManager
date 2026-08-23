@@ -9,18 +9,13 @@ function App() {
       descricao: "Limpar com uma pá e um saco de plástico",
       priori: "Média",
       situacao: "Concluída"
-    }
-
-  ]
+    }, // Faltou um ID (Identificador único)
+  ] // Utilizar useState ao invés de variáveis
 
   return (
     <div>
       {taskList.map((task) => {
-        console.log(<TaskForm titulo={task.title}/>)
-        console.log(<TaskForm desc={task.descricao}/>)
-        console.log(<TaskForm prioridade={task.priori}/>)
-        console.log(<TaskForm status={task.situacao}/>)
-          return <TaskForm titulo={task.title}/>
+          return <TaskForm titulo={task.title} desc={task.descricao} prioridade={task.priori} situacao={task.situacao}/> // Formulario fora do map //Passar states pro formulario
         })}
       
     </div>
@@ -28,3 +23,5 @@ function App() {
 }
 
 export default App
+
+//precisavamos do taskCard dentro do maps 

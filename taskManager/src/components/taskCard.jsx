@@ -2,12 +2,13 @@ import './taskCard.css'
 import { useEffect, useState} from 'react'
 import TaskForm from './TaskForm'
 
-const TaskCard = (task) => {
-  
+import React from 'react'
+
+export default function TaskCard() {
   return (
     <>
-
+      
     </>
   )
 }
-export default TaskCard
+ // Implementar taskCard 
