@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div>
-      {taskList.map((task) => {
+      {taskList((task) => {
           return <TaskForm titulo={task.title} desc={task.descricao} prioridade={task.priori} situacao={task.situacao}/> // Formulario fora do map //Passar states pro formulario
         })}
       
