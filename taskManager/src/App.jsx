@@ -14,12 +14,9 @@ function App() {
   ] // Utilizar useState ao invés de variáveis
 
   return (
-    <div>
-      {taskList((task) => {
-          return <TaskForm titulo={task.title} desc={task.descricao} prioridade={task.prioridade} situacao={task.situacao}/> // Formulario fora do map //Passar states pro formulario
-        })}
-      
-    </div>
+    <>
+      return <TaskForm titulo={taskList.title} desc={taskList.descricao} prioridade={taskList.prioridade} situacao={taskList.situacao}/>
+    </>
   )
 }
 
