@@ -5,7 +5,7 @@ import './taskCard.css'
 // import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function TaskCard({task:{id, titulo, descricao, prioridade, status}, onDelete}) {
+export default function TaskCard({id, titulo, descricao, prioridade, status, onDelete }) {
   return (
     <>
       <h2>{titulo}</h2>
