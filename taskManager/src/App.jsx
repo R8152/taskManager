@@ -12,11 +12,18 @@ function App() {
       prioridade: "Média",
       situacao: "Concluída"
     },
-  ]) // Utilizar useState ao invés de variáveis
+  ])
 
   return (
     <>
-      return <TaskForm titulo={taskList.title} desc={taskList.descricao} prioridade={taskList.prioridade} situacao={taskList.situacao}/>
+    <TaskForm setTasks={setTaskList}/>
+    <ul>
+      {taskList.map((task) => (
+        <li key={task.id}>
+          <strong>{task.titulo}</strong> - {task.descricao} ({task.prioridade} | {task.status})
+        </li>
+      ))}
+    </ul>
     </>
   )
 }
