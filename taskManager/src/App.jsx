@@ -1,9 +1,10 @@
 // import { useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import TaskForm from './components/TaskForm'
 
 function App() {
-  const taskList = [
+  const [taskList, setTaskList] = useState([
     {
       id: "",
       title: "Limpar a caixa dos gatos",
@@ -11,7 +12,7 @@ function App() {
       prioridade: "Média",
       situacao: "Concluída"
     },
-  ] // Utilizar useState ao invés de variáveis
+  ]) // Utilizar useState ao invés de variáveis
 
   return (
     <>
