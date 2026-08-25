@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
+import TaskForm from '../components/TaskForm'
+import TaskCard from '../components/TaskCard'
 
 export default function Tasks() {
   //Atualização automática de dados gravados anteriormente toda vez que a lista for alterada
@@ -19,7 +21,32 @@ export default function Tasks() {
     })
   return (
     <>
-      
+      <h1>Gerenciador de Tarefas</h1>
+      <section>
+        <h2>Cadastrar Nova Tarefa</h2>
+        <TaskForm setTasks={setTasks}/>
+      </section>
+      <hr/>
+      {/* Filtro por Status */}
+      <section>
+        <label htmlFor="filtro">Filtrar por Status:</label>
+        <select id="filtro" value={filtroStatus} onChange={(e) => setfiltroStatus(e.target.value)}></select>
+        <option value="Todas">Todas</option>
+        <option value="Pendente">Pendentes</option>
+        <option value="Em andamento">Em andamento</option>
+        <option value="Concluída">Concluída</option>
+      </section>
+      {/* Renderização da lista com map() */}
+      <section>
+        <h2>Lista de Tarefas ({tarefasFiltradas.length})</h2>
+        {tarefasFiltradas.length === 0 ? (
+          <p>Nenhuma tarefa encontrada</p>
+        ): (
+          tarefasFiltradas.map((task) => {
+            <TaskCard key={task.id} task={task} onDelete={handleDelete}/>
+          })
+        )}
+      </section>
     </>
   )
 }
