@@ -5,17 +5,18 @@ import TaskForm from './components/TaskForm'
 function App() {
   const taskList = [
     {
+      id: "",
       title: "Limpar a caixa dos gatos",
       descricao: "Limpar com uma pá e um saco de plástico",
-      priori: "Média",
+      prioridade: "Média",
       situacao: "Concluída"
-    }, // Faltou um ID (Identificador único)
+    },
   ] // Utilizar useState ao invés de variáveis
 
   return (
     <div>
       {taskList((task) => {
-          return <TaskForm titulo={task.title} desc={task.descricao} prioridade={task.priori} situacao={task.situacao}/> // Formulario fora do map //Passar states pro formulario
+          return <TaskForm titulo={task.title} desc={task.descricao} prioridade={task.prioridade} situacao={task.situacao}/> // Formulario fora do map //Passar states pro formulario
         })}
       
     </div>
@@ -23,5 +24,3 @@ function App() {
 }
 
 export default App
-
-//precisavamos do taskCard dentro do maps 
