@@ -20,6 +20,7 @@ export default function NewTask({setTasks}) {
       <p>
         <Link to={'/tasks'}>← Voltar para a lista de tarefas</Link>
       </p>
+      <TaskForm onSafe={handleAddTask}/>
     </>
   )
 }
