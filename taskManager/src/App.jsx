@@ -4,15 +4,7 @@ import './App.css'
 import TaskForm from './components/TaskForm'
 
 function App() {
-  const [taskList, setTaskList] = useState([
-    {
-      id: "",
-      title: "Limpar a caixa dos gatos",
-      descricao: "Limpar com uma pá e um saco de plástico",
-      prioridade: "Média",
-      situacao: "Concluída"
-    },
-  ])
+  const [taskList, setTaskList] = useState([])
 
   return (
     <>
