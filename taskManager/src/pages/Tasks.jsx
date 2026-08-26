@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react'
 import TaskForm from '../components/TaskForm'
 import TaskCard from '../components/TaskCard'
 
+const tarefasIniciais = []
 export default function Tasks() {
   //Atualização automática de dados gravados anteriormente toda vez que a lista for alterada
-    const [tasks, setTasks] = useState(() =>{
-      const savedTasks = localStorage.getItem("tasks")
-      return savedTasks ? JSON.parse(savedTasks) : []
-    })
+    const [tasks, setTasks] = useState(tarefasIniciais)
     const [filtroStatus, setfiltroStatus] = useState("Todas") //Armazena a opção de filtragem selecionada pelo usuário na tela ou controla o filtro por status
     useEffect(() => {
       localStorage.setItem('tasks', JSON.stringify(tasks)) //useEffect para salvar as tarefas no localStorage sempre que a lista mudar
