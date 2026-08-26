@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 
 export default function TaskDetails() {
   return (
-    <div>
-      
-    </div>
+    const {id} = useParams() //hook que retorna um objeto com valores extraídos do endereço web
+    <>
+    
+    </>
   )
 }
