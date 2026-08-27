@@ -1,7 +1,7 @@
 // import { useState } from 'react'
 import { useEffect, useState } from 'react'
 import './App.css'
-import TaskForm from './components/TaskForm'
+import { BrowserRouter, Link } from 'react-router-dom'
 
 function App() {
   //useState gerencia o estado central ou global da lista de tarefas
@@ -18,7 +18,13 @@ function App() {
   }, [tasks])
   return (
     <>
-    
+    <BrowserRouter>
+      <header>
+        <nav>
+          <Link to="/">Home</Link> | <Link to="/tasks">Tarefas</Link> | <Link to="/tasks/new">Nova Tarefa</Link>
+        </nav>
+      </header>
+    </BrowserRouter>
     </>
   )
 }
