@@ -4,18 +4,16 @@ import './App.css'
 import TaskForm from './components/TaskForm'
 
 function App() {
-  const [taskList, setTaskList] = useState([])
+  //useState gerencia o estado central ou global da lista de tarefas
+  //Carrega as tarefas gravadas no navegador. Se não houver nada salvo, define o estado como um array vazio []
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks')
+    return savedTasks ? JSON.parse(savedTasks) : []
+  })
 
   return (
     <>
-    <TaskForm setTasks={setTaskList}/>
-    <ul>
-      {taskList.map((task) => (
-        <li key={task.id}>
-          <strong>{task.titulo}</strong> - {task.descricao} ({task.prioridade} | {task.status})
-        </li>
-      ))}
-    </ul>
+    
     </>
   )
 }
