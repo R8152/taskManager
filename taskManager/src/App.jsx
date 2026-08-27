@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import TaskForm from './components/TaskForm'
 
@@ -10,7 +10,12 @@ function App() {
     const savedTasks = localStorage.getItem('tasks')
     return savedTasks ? JSON.parse(savedTasks) : []
   })
-
+  //useEffect sincroniza o App com o localStorage
+  //Sempre que tasks sofre alguma alteração, o useEffect e a função passada para este são executados automaticamente
+  //Pega o array atualizado de tasks, converte para texto com JSON.stringify e salva no localStorage do navegador
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+  }, [tasks])
   return (
     <>
     
