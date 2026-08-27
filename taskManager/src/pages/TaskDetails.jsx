@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 
 export default function TaskDetails({tasks}) {
   const {id} = useParams() //hook que retorna um objeto com valores extraídos do endereço web
@@ -30,7 +30,16 @@ export default function TaskDetails({tasks}) {
     }
   return (
     <>
-    
+    <h1>Detalhes da tarefa</h1>
+    <div>
+      <h2>{task.titulo}</h2>
+      <p><strong>Descrição</strong>: {task.descricao}</p>
+      <p><strong>Prioridade</strong>: {task.prioridade}</p>
+      <p><strong>Status</strong>: {task.status}</p>
+      <p>ID da tarefa: {task.id}</p>
+    </div>
+    <br />
+    <Link to="/tasks">← Voltar para a listagem</Link>
     </>
   )
 }
