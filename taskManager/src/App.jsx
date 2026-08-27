@@ -1,9 +1,13 @@
 // import { useState } from 'react'
 import { useEffect, useState } from 'react'
 import './App.css'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Tasks from './pages/Tasks'
+import NewTask from './pages/NewTask'
+import TaskDetails from './pages/TaskDetails'
 
-function App() {
+export default function App() {
   //useState gerencia o estado central ou global da lista de tarefas
   //Carrega as tarefas gravadas no navegador. Se não houver nada salvo, define o estado como um array vazio []
   const [tasks, setTasks] = useState(() => {
@@ -24,9 +28,16 @@ function App() {
           <Link to="/">Home</Link> | <Link to="/tasks">Tarefas</Link> | <Link to="/tasks/new">Nova Tarefa</Link>
         </nav>
       </header>
+      <hr />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/tasks" element={<Tasks tasks={tasks} setTasks={setTasks}/>}/>
+          <Route path="/tasks/new" element={<NewTask setTasks={setTasks}/>}/>
+          <Route path="/tasks/:id" element={<TaskDetails tasks={tasks}/>}/>
+        </Routes>
+      </main>
     </BrowserRouter>
     </>
   )
 }
-
-export default App
