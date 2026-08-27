@@ -18,9 +18,9 @@ export default function NewTask({setTasks}) {
     <>
       <h1>Cadastrar nova Tarefa</h1>
       <p>
-        <Link to={'/tasks'}>← Voltar para a lista de tarefas</Link>
+        <Link to="/tasks">← Voltar para a lista de tarefas</Link>
       </p>
-      <TaskForm onSafe={handleAddTask}/>
+      <TaskForm setTasks={setTasks} onNavigate={() => navigate('/tasks')} onSafe={handleAddTask}/>
     </>
   )
 }
