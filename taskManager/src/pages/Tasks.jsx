@@ -25,11 +25,11 @@ export default function Tasks() {
       {/* Filtro por Status */}
       <section>
         <label htmlFor="filtro">Filtrar por Status:</label>
-        <select id="filtro" value={filtroStatus} onChange={(e) => setfiltroStatus(e.target.value)}></select>
+        <select id="filtro" value={filtroStatus} onChange={(e) => setfiltroStatus(e.target.value)}>
         <option value="Todas">Todas</option>
         <option value="Pendente">Pendentes</option>
         <option value="Em andamento">Em andamento</option>
-        <option value="Concluída">Concluída</option>
+        <option value="Concluída">Concluída</option></select>
       </section>
       {/* Renderização da lista com map() */}
       <section>
