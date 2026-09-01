@@ -13,7 +13,7 @@ export default function TaskCard({id, titulo, descricao, prioridade, status, onD
       <p>{prioridade}</p>
       <p>{status}</p>
       <Link to={`/tasks/${id}`}>Ver Detalhes</Link>
-      <button onClick={() => onDelete({id, titulo, descricao, prioridade, status})}>
+      <button onClick={() => onDelete(id)}>
         Excluir
       </button>
     </>
