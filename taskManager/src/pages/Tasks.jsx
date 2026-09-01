@@ -8,7 +8,8 @@ export default function Tasks() {
     const [tasks, setTasks] = useState(tarefasIniciais)
     const [filtroStatus, setfiltroStatus] = useState("Todas") //Armazena a opção de filtragem selecionada pelo usuário na tela ou controla o filtro por status
     const handleDelete = (id) => {
-      setTasks(prevTasks => prevTasks.filter(task => task.id !== id))
+      console.log("OH O DOIDO")
+      setTasks(prevTasks => prevTasks.filter(task => task.id !== id)) // Isso não é exclusão
     }
     const tarefasFiltradas = tasks.filter(task => { //Aplicação do filtro de status por meio do filter()
       if(filtroStatus === 'Todas') return true
@@ -38,7 +39,15 @@ export default function Tasks() {
           <p>Nenhuma tarefa encontrada</p>
         ): (
           tarefasFiltradas.map((task) => {
-            <TaskCard key={task.id} task={task} onDelete={handleDelete}/>
+            return <TaskCard 
+            key={task.id} 
+            id={task.id} 
+            titulo={task.titulo} 
+            descricao={task.descricao} 
+            prioridade={task.prioridade}
+            status={task.status}
+            onDelete={handleDelete}
+            />
           })
         )}
       </section>
